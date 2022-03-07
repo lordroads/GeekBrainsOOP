@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NoHfSqZW80MhnC3xgU6Q1niyV6nCAf/wQ0gBQFKyAojM0QdHFo/2geGAHdxgJoR/Cv+r+dVSfOpodNjQRQXQFQ==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\GeekBrainsOOP\\Lessons-2\\DepositBank\\DepositBank.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Home\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
