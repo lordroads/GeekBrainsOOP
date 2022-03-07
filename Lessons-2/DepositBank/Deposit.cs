@@ -4,17 +4,14 @@ namespace DepositBank
 {
     public class Deposit
     {
-        private Guid _id;
+        public static Guid id;
         private decimal _balacne;
         private Type _type;
+        
 
-        public void SetId(Guid guid)
+        public void CreateId()
         {
-            _id = guid;
-        }
-        public Guid GetId()
-        {
-            return _id;
+            id = Guid.NewGuid();
         }
         public void SetBalacne(decimal balance)
         {
