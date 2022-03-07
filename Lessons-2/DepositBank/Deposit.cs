@@ -28,7 +28,20 @@ namespace DepositBank
         {
             Id = Guid.NewGuid();
         }
+        public bool GetCash(decimal amount)
+        {
+            if (Balance >= amount)
+            {
+                Balance -= amount;
 
+                return true;
+            }
+            return false;
+        }
+        public void SetCash(decimal amount)
+        {
+            Balance += amount;
+        }
         public new void ToString()
         {
             Console.WriteLine($"ID deposit - {Id}");
