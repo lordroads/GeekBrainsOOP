@@ -4,9 +4,9 @@ namespace DepositBank
 {
     public class Deposit
     {
-        private Guid _id;
-        private decimal _balacne;
-        private Type _type;
+        public Guid Id { get; set; }
+        public decimal Balance { get; set; }
+        public Type Type { get; set; }
 
         public Deposit() : this(1, Type.Current)
         {
@@ -20,25 +20,20 @@ namespace DepositBank
         public Deposit(decimal balance, Type type)
         {
             CreateId();
-            _balacne = balance;
-            _type = type;
+            Balance = balance;
+            Type = type;
         }
 
         private void CreateId()
         {
-            _id = Guid.NewGuid();
+            Id = Guid.NewGuid();
         }
-        public Guid GetId()
+
+        public new void ToString()
         {
-            return _id;
-        }
-        public decimal GetBalance()
-        {
-            return _balacne;
-        }
-        public new Type GetType()
-        {
-            return _type;
+            Console.WriteLine($"ID deposit - {Id}");
+            Console.WriteLine($"Type deposit - {Type}");
+            Console.WriteLine($"Balance deposit - {Balance.ToString("# ### ###.##")}");
         }
     }
 }

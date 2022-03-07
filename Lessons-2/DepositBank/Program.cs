@@ -7,14 +7,15 @@ namespace DepositBank
     {
         static void Main(string[] args)
         {
-            Deposit deposit = new Deposit(100, Type.Calculated);
+            Deposit defaultDeposit = new Deposit();
+            Deposit JohnDeposit = new Deposit(Type.Calculated);
+            Deposit BenDeposit = new Deposit(1000);
+            Deposit StenDeposit = new Deposit(1000000, Type.Deposit);
 
-            StringBuilder viewDeposit = new StringBuilder();
-            viewDeposit.AppendLine($"ID deposit - {deposit.GetId()}");
-            viewDeposit.AppendLine($"Type deposit - {deposit.GetType()}");
-            viewDeposit.AppendLine($"Balance deposit - {deposit.GetBalance().ToString("# ### ###.##")}");
-
-            Console.WriteLine(viewDeposit);
+            defaultDeposit.ToString();
+            JohnDeposit.ToString();
+            BenDeposit.ToString();
+            StenDeposit.ToString();
         }
     }
 }
