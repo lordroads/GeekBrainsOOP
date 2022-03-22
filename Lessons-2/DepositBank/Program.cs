@@ -16,6 +16,23 @@ namespace DepositBank
             JohnDeposit.ToString();
             BenDeposit.ToString();
             StenDeposit.ToString();
+
+            Deposit deposit = new Deposit(1000000);
+            Deposit depositForShopping = new Deposit();
+
+            Console.WriteLine();
+            //Positive test
+            bool transferStatus = depositForShopping.TransferMoneyFromTheAccount(deposit, 500000);
+            Console.WriteLine($"Transfer status - {transferStatus}");
+            deposit.ToString();
+            depositForShopping.ToString();
+
+            Console.WriteLine();
+            //Negative test
+            transferStatus = depositForShopping.TransferMoneyFromTheAccount(deposit, 500001);
+            Console.WriteLine($"Transfer status - {transferStatus}");
+            deposit.ToString();
+            depositForShopping.ToString();
         }
     }
 }
