@@ -42,11 +42,11 @@ public class Building
         set { _quantityEntrance = value; }
     }
 
-    public Building()
+    internal Building()
     {
         _number = GetNumberBuilding();
     }
-    public Building(int number, float hieghtInMeters, int quantityFloor, int quantityApartaments, int quantityEntrance)
+    internal Building(int number, float hieghtInMeters, int quantityFloor, int quantityApartaments, int quantityEntrance)
     {
         _number = number;
         _hieghtInMeters = hieghtInMeters;
