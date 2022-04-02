@@ -8,9 +8,9 @@ namespace DepositBank
         static void Main(string[] args)
         {
             Deposit defaultDeposit = new Deposit();
-            Deposit JohnDeposit = new Deposit(Type.Calculated);
+            Deposit JohnDeposit = new Deposit(DepositType.Calculated);
             Deposit BenDeposit = new Deposit(1000);
-            Deposit StenDeposit = new Deposit(1000000, Type.Deposit);
+            Deposit StenDeposit = new Deposit(1000000, DepositType.Deposit);
 
             defaultDeposit.ToString();
             JohnDeposit.ToString();
@@ -33,6 +33,15 @@ namespace DepositBank
             Console.WriteLine($"Transfer status - {transferStatus}");
             deposit.ToString();
             depositForShopping.ToString();
+
+            //Тесторование сравнений
+            Deposit depositA = new Deposit();
+            Deposit depositB = new Deposit();
+            bool equality = depositA == depositB;   //false
+            bool inequality = depositA != depositB; //true
+            int hashA = depositA.GetHashCode();
+            int hashB = depositB.GetHashCode();
+            bool equalityHash = hashA == hashB;     //false
         }
     }
 }

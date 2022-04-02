@@ -6,18 +6,18 @@ namespace DepositBank
     {
         public Guid Id { get; set; }
         public decimal Balance { get; set; }
-        public Type Type { get; set; }
+        public DepositType Type { get; set; }
 
-        public Deposit() : this(1, Type.Current)
+        public Deposit() : this(1, DepositType.Current)
         {
         }
-        public Deposit(decimal balance) : this(balance, Type.Current)
+        public Deposit(decimal balance) : this(balance, DepositType.Current)
         {
         }
-        public Deposit(Type type) : this(1, type)
+        public Deposit(DepositType type) : this(1, type)
         {
         }
-        public Deposit(decimal balance, Type type)
+        public Deposit(decimal balance, DepositType type)
         {
             CreateId();
             Balance = balance;
@@ -56,11 +56,46 @@ namespace DepositBank
         {
             Balance += amount;
         }
-        public new void ToString()
+
+        public static bool operator ==(Deposit depositA, Deposit depositB)
         {
-            Console.WriteLine($"ID deposit - {Id}");
-            Console.WriteLine($"Type deposit - {Type}");
-            Console.WriteLine($"Balance deposit - {Balance.ToString("# ### ###.##")}");
+            if (depositA is null)
+            {
+                return depositB is null;
+            }
+
+            return depositA.Equals(depositB);
+        }
+        public static bool operator !=(Deposit depositA, Deposit depositB)
+        {
+            if (depositA is null)
+            {
+                return true;
+            }
+
+            return !depositA.Equals(depositB);
+        }
+        public override string ToString()
+        {
+            return $"ID deposit - {Id}\nType deposit - {Type}\nBalance deposit - {Balance.ToString("# ### ###.##")}\n";
+        }
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Deposit);
+        }
+        public bool Equals(Deposit other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+            return other != null && other.Id == Id
+                && other.Balance == Balance
+                && other.Type == Type;
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Balance, Type);
         }
     }
 }
