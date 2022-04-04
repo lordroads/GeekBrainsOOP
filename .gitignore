@@ -35,6 +35,9 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+#My Settings
+**/*.suo
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -360,4 +363,3 @@ MigrationBackup/
 Lessons-3/Lessons-3.sln
 Lessons-3/ExpandedLine/ExpandedLine.csproj
 Lessons-3/SearchMail/SearchMail.csproj
-Lessons-4/Lessons-4.sln
