@@ -28,6 +28,20 @@ namespace DepositBank
         {
             Id = Guid.NewGuid();
         }
+        public bool TransferMoneyFromTheAccount(Deposit deposit, decimal amount)
+        {
+
+            if (deposit != null & amount > 0)
+            {
+                if (deposit.GetCash(amount))
+                {
+                    SetCash(amount);
+
+                    return true;
+                }
+            }
+            return false;
+        }
         public bool GetCash(decimal amount)
         {
             if (Balance >= amount)
