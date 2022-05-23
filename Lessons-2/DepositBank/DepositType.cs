@@ -2,7 +2,7 @@
 
 namespace DepositBank
 {
-    public enum Type
+    public enum DepositType
     {
         Current,
         Calculated,
